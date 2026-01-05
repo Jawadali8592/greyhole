@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,11 +13,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center glow-effect-sm group-hover:glow-effect transition-all duration-300">
-              <Download className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="Grey Hole" className="w-10 h-10 object-contain" />
             <span className="text-xl font-bold text-foreground">
-              Vid<span className="text-gradient">Grab</span>
+              Grey<span className="text-accent">Hole</span>
             </span>
           </Link>
 
