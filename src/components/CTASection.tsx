@@ -1,3 +1,5 @@
+'use client';
+
 import { Download, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -7,7 +9,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-10 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 pattern-overlay" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
@@ -24,7 +26,7 @@ const CTASection = () => {
           </h2>
           
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Start downloading your favorite videos now. It's free, fast, and secure. 
+            Start downloading your favorite videos now. It&apos;s free, fast, and secure. 
             No registration required.
           </p>
           

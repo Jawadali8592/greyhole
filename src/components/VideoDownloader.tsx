@@ -1,8 +1,7 @@
-'use client';
-
+"use client";
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -25,16 +24,16 @@ import { HowToDownloadModal } from "./HowToDownloadModal";
 import Image from "next/image";
 
 const qualityOptions = [
-
+  { value: "best", label: "Best Quality" },
   { value: "1080p", label: "MP4 1080p" },
   { value: "720p", label: "MP4 720p" },
   { value: "480p", label: "MP4 480p" },
   { value: "audio", label: "MP3 Audio" },
 ];
 
-const HeroSection = () => {
+export function VideoDownloader() {
   const [url, setUrl] = useState("");
-  const [selectedQuality, setSelectedQuality] = useState("1080p");
+  const [selectedQuality, setSelectedQuality] = useState("best");
   const [selectedFormat, setSelectedFormat] = useState("mp4");
   const [showTutorialModal, setShowTutorialModal] = useState(false);
 
@@ -100,26 +99,15 @@ const HeroSection = () => {
   const isProcessing = isLoadingInfo || isDownloading;
 
   return (
-    <div className="mt-16 bg-background flex flex-col items-center px-4 py-12">
-      <div className="w-full max-w-[760px] space-y-8">
+    <div className="min-h-screen bg-background flex flex-col items-center px-4 py-12">
+      <div className="w-full max-w-2xl space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-primary font-medium">Free & Unlimited Downloads</span>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-            Download Videos from{" "}
-            <h2 className="text-gradient  mt-2">Instagram, TikTok & More</h2>
+        <div className="text-center space-y-2">
+          <h1 className="text-3xl font-bold text-foreground">
+            Video Downloader
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            The best free and fast converter for MP3 and MP4 formats. Simply
-            paste the URL and let the magic happen!
+          <p className="text-muted-foreground">
+            Download videos from TikTok, YouTube, Instagram & more
           </p>
         </div>
 
@@ -344,6 +332,4 @@ const HeroSection = () => {
       </div>
     </div>
   );
-};
-
-export default HeroSection;
+}

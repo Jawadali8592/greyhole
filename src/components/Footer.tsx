@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { Heart, Mail, Github, Twitter } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,23 +9,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Grey Hole" className="w-10 h-10 object-contain" />
-              <span className="text-xl font-bold text-foreground">
-                Grey<span className="text-accent">Hole</span>
-              </span>
-            </Link>
+              <Link href="/" className="">
+            <Image src="/grey-hole-logo.png" alt="Grey Hole" width={120} height={120} className="object-contain" />
+           
+          </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
               The fastest and most reliable video downloader for YouTube, TikTok, Twitter, and more. 
               Download in MP3, MP4, and other formats for free.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all">
-                <Github className="w-5 h-5" />
-              </a>
+       
               <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all">
                 <Mail className="w-5 h-5" />
               </a>
@@ -37,7 +30,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
@@ -59,20 +52,20 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
-              <li>
-                <Link to="/terms#privacy" className="text-muted-foreground hover:text-primary transition-colors">
+              {/* <li>
+                <Link href="/terms#privacy" className="text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms#disclaimer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/terms#disclaimer" className="text-muted-foreground hover:text-primary transition-colors">
                   Disclaimer
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
