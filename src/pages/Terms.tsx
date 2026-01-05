@@ -35,9 +35,9 @@ const Terms = () => {
                   <div>
                     <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      Welcome to VidGrab. By accessing and using our service, you agree to be bound by these Terms and Conditions. 
+                      Welcome to Grey Hole. By accessing and using our service, you agree to be bound by these Terms and Conditions. 
                       If you do not agree with any part of these terms, you may not use our service. 
-                      VidGrab provides a video downloading service that allows users to download videos from various platforms for personal use.
+                      Grey Hole provides a video downloading service that allows users to download videos from various platforms for personal use.
                     </p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ const Terms = () => {
               <section className="bg-card rounded-2xl border border-border p-8">
                 <h2 className="text-2xl font-semibold text-foreground mb-4">2. Acceptable Use</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-4">
-                  <p>You agree to use VidGrab only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+                  <p>You agree to use Grey Hole only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Download copyrighted content without proper authorization from the copyright holder</li>
                     <li>Use the service for any commercial purposes without permission</li>
@@ -64,7 +64,7 @@ const Terms = () => {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">3. Copyright & Intellectual Property</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-4">
                   <p>
-                    VidGrab respects the intellectual property rights of others and expects users to do the same. 
+                    Grey Hole respects the intellectual property rights of others and expects users to do the same. 
                     The content you download using our service may be protected by copyright laws.
                   </p>
                   <p>
@@ -114,7 +114,7 @@ const Terms = () => {
                     <h2 className="text-2xl font-semibold text-foreground mb-4">5. Disclaimer</h2>
                     <div className="text-muted-foreground leading-relaxed space-y-4">
                       <p>
-                        VidGrab is provided "as is" without any warranties of any kind, either express or implied. We make no guarantees about:
+                        Grey Hole is provided "as is" without any warranties of any kind, either express or implied. We make no guarantees about:
                       </p>
                       <ul className="list-disc pl-6 space-y-2">
                         <li>The availability, reliability, or accuracy of the service</li>
@@ -136,7 +136,7 @@ const Terms = () => {
                 <h2 className="text-2xl font-semibold text-foreground mb-4">6. Limitation of Liability</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-4">
                   <p>
-                    To the maximum extent permitted by law, VidGrab and its operators shall not be liable for any 
+                    To the maximum extent permitted by law, Grey Hole and its operators shall not be liable for any 
                     indirect, incidental, special, consequential, or punitive damages, including but not limited to:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">

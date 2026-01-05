@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Download, Heart, Mail, Github, Twitter } from "lucide-react";
+import { Heart, Mail, Github, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,11 +10,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                <Download className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src={logo} alt="Grey Hole" className="w-10 h-10 object-contain" />
               <span className="text-xl font-bold text-foreground">
-                Vid<span className="text-gradient">Grab</span>
+                Grey<span className="text-accent">Hole</span>
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
@@ -81,7 +80,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} VidGrab. All rights reserved.
+            © {new Date().getFullYear()} Grey Hole. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-primary fill-primary" /> for video lovers
