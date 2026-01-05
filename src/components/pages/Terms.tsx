@@ -6,7 +6,7 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24 pb-16">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           {/* Page Header */}
           <div className="max-w-4xl mx-auto">
@@ -35,13 +35,13 @@ const Terms = () => {
             {/* Terms Content */}
             <div className="space-y-8">
               {/* 1. Acceptance of Terms */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
+                  <div className="w-12  h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Scale className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
+                    <h2 className="md:text-2xl md:mt-0 mt-3 text-xl font-semibold text-foreground mb-4">1. Acceptance of Terms</h2>
                     <p className="text-muted-foreground leading-relaxed">
                       By installing, accessing, or using the Greyhole Downloader App, you agree to be bound by these Terms & Conditions. If you do not agree, do not use the Service.
                     </p>
@@ -50,8 +50,8 @@ const Terms = () => {
               </section>
 
               {/* 2. Description of the Service */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">2. Description of the Service</h2>
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">2. Description of the Service</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
                   <p>• Greyhole allows users to download videos or media from third-party websites and platforms.</p>
                   <p>• The Service is provided for personal and lawful use only.</p>
@@ -60,13 +60,13 @@ const Terms = () => {
               </section>
 
               {/* 3. User Responsibilities */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Users className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">3. User Responsibilities</h2>
+                    <h2 className="md:text-2xl text-xl font-semibold md:mt-0 mt-3 text-foreground mb-4">3. User Responsibilities</h2>
                     <p className="text-muted-foreground leading-relaxed mb-3">
                       By using the app, you agree that you will:
                     </p>
@@ -84,18 +84,18 @@ const Terms = () => {
               </section>
 
               {/* 4. Third-Party Platform Compliance */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">4. Third-Party Platform Compliance</h2>
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">4. Third-Party Platform Compliance</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
-                  <p>• Greyhole works with publicly accessible media links from platforms such as YouTube, Instagram, TikTok, Facebook, etc.</p>
+                  <p>• Greyhole works with publicly accessible media links from platforms such as  Instagram, TikTok, Facebook, etc.</p>
                   <p>• You must comply with the Terms of Service of each platform you interact with.</p>
                   <p>• Greyhole is not affiliated with or endorsed by any of these platforms.</p>
                 </div>
               </section>
 
               {/* 5. No Account Required */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">5. No Account Required</h2>
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">5. No Account Required</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
                   <p>• You can use the app without creating an account.</p>
                   <p>• We do not collect personal information like your name or email unless you contact us directly.</p>
@@ -103,13 +103,13 @@ const Terms = () => {
               </section>
 
               {/* 6. Data Collection & Privacy */}
-              <section id="privacy" className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section id="privacy" className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Shield className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">6. Data Collection & Privacy</h2>
+                    <h2 className="md:text-2xl text-xl md:mt-0 mt-3 font-semibold text-foreground mb-4">6. Data Collection & Privacy</h2>
                     <div className="text-muted-foreground leading-relaxed space-y-3">
                       <p>Your use of the app is governed by our Privacy Policy, which explains:</p>
                       <ul className="list-disc pl-6 space-y-2">
@@ -126,13 +126,13 @@ const Terms = () => {
               </section>
 
               {/* 7. Intellectual Property */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Lock className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">7. Intellectual Property</h2>
+                    <h2 className="md:text-2xl md:mt-0 mt-3 text-xl font-semibold text-foreground mb-4">7. Intellectual Property</h2>
                     <div className="text-muted-foreground leading-relaxed space-y-3">
                       <p>• The app, including its design, logo, text, and features, is owned by Greyhole.</p>
                       <p>• You may not copy, modify, reverse-engineer, or redistribute the app without permission.</p>
@@ -142,13 +142,13 @@ const Terms = () => {
               </section>
 
               {/* 8. Prohibited Activities */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-destructive/20 flex items-center justify-center shrink-0">
                     <AlertTriangle className="w-6 h-6 text-destructive" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">8. Prohibited Activities</h2>
+                    <h2 className="md:text-2xl text-xl font-semibold md:mt-0 mt-3 text-foreground mb-4">8. Prohibited Activities</h2>
                     <p className="text-muted-foreground leading-relaxed mb-3">
                       You agree NOT to:
                     </p>
@@ -166,8 +166,8 @@ const Terms = () => {
               </section>
 
               {/* 9. Disclaimer of Warranty */}
-              <section id="disclaimer" className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">9. Disclaimer of Warranty</h2>
+              <section id="disclaimer" className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">9. Disclaimer of Warranty</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
                   <p>The Service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind.</p>
                   <p className="font-medium text-foreground">We do not guarantee:</p>
@@ -184,8 +184,8 @@ const Terms = () => {
               </section>
 
               {/* 10. Limitation of Liability */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">10. Limitation of Liability</h2>
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">10. Limitation of Liability</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
                   <p className="font-medium text-foreground">Greyhole is not liable for:</p>
                   <ul className="list-disc pl-6 space-y-2">
@@ -201,8 +201,8 @@ const Terms = () => {
               </section>
 
               {/* 11. Changes to the Terms */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <h2 className="text-2xl font-semibold text-foreground mb-4">11. Changes to the Terms</h2>
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <h2 className="md:text-2xl text-xl font-semibold text-foreground mb-4">11. Changes to the Terms</h2>
                 <div className="text-muted-foreground leading-relaxed space-y-3">
                   <p>• We may update or modify these Terms & Conditions at any time.</p>
                   <p>• Changes will be effective once posted in the app or on our website.</p>
@@ -210,13 +210,13 @@ const Terms = () => {
               </section>
 
               {/* 12. Termination */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Gavel className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">12. Termination</h2>
+                    <h2 className="md:text-2xl text-xl md:mt-0 mt-3 font-semibold text-foreground mb-4">12. Termination</h2>
                     <p className="text-muted-foreground leading-relaxed mb-3">
                       We may suspend or terminate your access to the Service at any time if you:
                     </p>
@@ -230,13 +230,13 @@ const Terms = () => {
               </section>
 
               {/* 13. Contact Us */}
-              <section className="bg-card rounded-2xl border border-border p-8">
-                <div className="flex items-start gap-4">
+              <section className="bg-card rounded-2xl border border-border md:p-8 p-4">
+                <div className="md:flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shrink-0">
                     <Mail className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-semibold text-foreground mb-4">13. Contact Us</h2>
+                    <h2 className="md:text-2xl text-xl md:mt-0 mt-3 font-semibold text-foreground mb-4">13. Contact Us</h2>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       For questions or concerns about these Terms, contact us at:
                     </p>

@@ -6,7 +6,7 @@ import { Providers } from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Greyhole - Free Video Downloader for YouTube, TikTok, Instagram & More',
+  title: 'Greyhole - Free Video Downloader for  TikTok, Instagram & More',
   description: 'Download videos from  TikTok, Instagram, Twitter, Facebook and more. Free, fast and secure video downloader. Convert videos to MP3, MP4 in HD quality. No registration required.',
   keywords: 'video downloader, Instagram downloader, Tiktok downloader, twitter video downloader, facebook video downloader, mp3 converter, mp4 downloader, free video downloader, greyhole',
   authors: [{ name: 'Greyhole' }],

@@ -7,12 +7,12 @@ import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Greyhole - Free Video Downloader for YouTube, TikTok, Instagram & More',
-  description: 'Download videos from YouTube, TikTok, Instagram, Twitter, Facebook and more. Free, fast and secure video downloader. Convert videos to MP3, MP4 in HD quality. No registration required.',
-  keywords: 'video downloader, youtube downloader, tiktok downloader, instagram downloader, twitter video downloader, facebook video downloader, mp3 converter, mp4 downloader, free video downloader, greyhole, download videos online',
+  title: 'Greyhole - Free Video Downloader for  TikTok, Instagram & More',
+  description: 'Download videos from  TikTok, Instagram, Twitter, Facebook and more. Free, fast and secure video downloader. Convert videos to MP3, MP4 in HD quality. No registration required.',
+  keywords: 'video downloader, downloader, tiktok downloader, instagram downloader, twitter video downloader, facebook video downloader, mp3 converter, mp4 downloader, free video downloader, greyhole, download videos online',
   openGraph: {
     title: 'Greyhole - Free Video Downloader',
-    description: 'Download videos from YouTube, TikTok, Instagram & more. Free, fast and secure.',
+    description: 'Download videos from  TikTok, Instagram & more. Free, fast and secure.',
     url: 'https://greyhole.live',
     siteName: 'Greyhole',
     type: 'website',

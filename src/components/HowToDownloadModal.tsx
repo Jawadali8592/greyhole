@@ -36,7 +36,7 @@ export function HowToDownloadModal({ isOpen, onClose }: { isOpen: boolean; onClo
         <div className="p-4 bg-muted/30">
           <h3 className="font-medium text-foreground mb-2">Quick Steps:</h3>
           <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-            <li>Copy the video URL from TikTok, YouTube, Instagram, etc.</li>
+            <li>Copy the video URL from TikTok, Instagram, etc.</li>
             <li>Paste the link in the input field above</li>
             <li>Click &quot;Get Info&quot; to fetch video details</li>
             <li>Select your preferred quality</li>

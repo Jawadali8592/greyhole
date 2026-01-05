@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Which platforms are supported?",
-    answer: "Our downloader supports all major video platforms including YouTube, TikTok, Twitter/X, Instagram, Facebook, Vimeo, Dailymotion, and many more. Simply paste the video URL and we'll handle the rest.",
+    answer: "Our downloader supports all major video platforms including  TikTok, Twitter/X, Instagram, Facebook, Vimeo, Dailymotion, and many more. Simply paste the video URL and we'll handle the rest.",
   },
   {
     question: "Is it safe to download videos?",

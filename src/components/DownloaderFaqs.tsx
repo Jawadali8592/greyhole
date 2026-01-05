@@ -17,7 +17,7 @@ export default function DownloaderFaqs() {
     {
       question: "Can I save videos from any platform?",
       answer:
-        "Yes! You can download any public content from TikTok, YouTube, Instagram, Twitter and more. Simply copy the link to the content and paste it in our downloader.",
+        "Yes! You can download any public content from TikTok,  Instagram, Twitter and more. Simply copy the link to the content and paste it in our downloader.",
     },
     {
       question: "Do I need to pay to use this video downloader?",

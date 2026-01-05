@@ -41,7 +41,7 @@ const FeaturesSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             A converter for{" "}
-            <span className="text-gradient">YouTube, TikTok, Twitter</span> and more!
+            <span className="text-gradient">Instagram, TikTok, Twitter</span> and more!
           </h2>
           <p className="text-muted-foreground text-lg">
             Simply use the best free and fast video converter to download videos 

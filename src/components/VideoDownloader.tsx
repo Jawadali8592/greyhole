@@ -107,7 +107,7 @@ export function VideoDownloader() {
             Video Downloader
           </h1>
           <p className="text-muted-foreground">
-            Download videos from TikTok, YouTube, Instagram & more
+            Download videos from TikTok, Facebook, Instagram & more
           </p>
         </div>
 

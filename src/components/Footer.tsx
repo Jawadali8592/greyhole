@@ -14,7 +14,7 @@ const Footer = () => {
            
           </Link>
             <p className="text-muted-foreground max-w-sm mb-6">
-              The fastest and most reliable video downloader for YouTube, TikTok, Twitter, and more. 
+              The fastest and most reliable video downloader for Instagram, TikTok, Twitter, and more. 
               Download in MP3, MP4, and other formats for free.
             </p>
             <div className="flex items-center gap-4">
