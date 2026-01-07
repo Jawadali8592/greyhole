@@ -113,13 +113,12 @@ const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Download Videos from{" "}
-            <h2 className="text-gradient  mt-2">Instagram, TikTok & More</h2>
+            <h2 className="text-gradient  mt-2">Instagram, TikTok, Twitter (X) & More – <br/>Free & No Watermark! </h2>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            The best free and fast converter for MP3 and MP4 formats. Simply
-            paste the URL and let the magic happen!
+         Greyhole is the best free online video downloader for TikTok, Instagram Reels, Twitter (X), Facebook, and more platforms. Download high-quality videos without watermark in MP4 or MP3 Format. Convert to MP3 audio instantly – no registration, no ads, completely free and super fast. Just paste the link and save videos directly to your device for offline viewing!
           </p>
         </div>
 

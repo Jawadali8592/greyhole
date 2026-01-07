@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import ComingSoonModal from "./ComingSoonModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPlatform, setSelectedPlatform] = useState("android");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -33,6 +36,19 @@ const Header = () => {
             <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Terms
             </Link>
+            <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+              Privacy
+            </Link>
+            <Button
+              onClick={() => {
+                setSelectedPlatform("android");
+                setShowModal(true);
+              }}
+              className="bg-secondary hover:bg-muted text-foreground border border-border transition-colors"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download App
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -78,10 +94,35 @@ const Header = () => {
               >
                 Terms
               </Link>
+              <Link 
+                href="/privacy" 
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Privacy
+              </Link>
+              <Button
+                onClick={() => {
+                  setSelectedPlatform("android");
+                  setShowModal(true);
+                  setIsMenuOpen(false);
+                }}
+                className="bg-secondary hover:bg-muted text-foreground border border-border transition-colors w-full"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download App
+              </Button>
             </div>
           </nav>
         )}
       </div>
+
+      {/* Coming Soon Modal */}
+      <ComingSoonModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        platform={selectedPlatform}
+      />
     </header>
   );
 };

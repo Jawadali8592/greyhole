@@ -19,12 +19,12 @@ const features = [
   {
     icon: Infinity,
     title: "Unlimited Downloads",
-    description: "No daily limits or restrictions. Download videos without any limitations.",
+    description: "Unlimited downloads with no daily limits or restrictions – save as many videos as you like!",
   },
   {
     icon: ListMusic,
     title: "Playlist Support",
-    description: "Download entire playlists at once. Save up to 100 videos per playlist.",
+    description: "Download entire playlists at once – save time and get all videos instantly!",
   },
   {
     icon: Smartphone,

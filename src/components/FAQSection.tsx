@@ -9,36 +9,56 @@ import {
 
 const faqs = [
   {
-    question: "Is this video downloader completely free to use?",
-    answer: "Yes, our service is 100% free to use. There are no hidden fees, subscriptions, or premium plans. You can download unlimited videos without paying anything.",
+    question: "What is Greyhole?",
+    answer: "Greyhole is a free online tool/app that lets you download videos from supported platforms — like TikTok, Instagram, and others — directly to your device in high quality with just a link.",
   },
   {
-    question: "What video formats are supported?",
-    answer: "We support multiple formats including MP3, MP3 HD, MP4, MP4 HD, MP4 2K, WAV, and more. You can choose the format that best suits your needs before downloading.",
+    question: "Do I need to create an account to use Greyhole?",
+    answer: "No — you do not need to sign up or log in. Just paste a valid video link and download. It's simple and open to everyone.",
   },
   {
-    question: "Which platforms are supported?",
-    answer: "Our downloader supports all major video platforms including  TikTok, Twitter/X, Instagram, Facebook, Vimeo, Dailymotion, and many more. Simply paste the video URL and we'll handle the rest.",
+    question: "Is Greyhole free to use?",
+    answer: "Yes! Greyhole is completely free. There are no subscription fees, hidden charges, or limits on how many videos you can download.",
   },
   {
-    question: "Is it safe to download videos?",
-    answer: "Absolutely! Our service is completely safe to use. We don't store any user data or downloaded content on our servers. All downloads are encrypted and secure.",
+    question: "How do I download a video using Greyhole?",
+    answer: "Open the platform (e.g., TikTok) and find the video you want. Tap Share → Copy Link. Open Greyhole and paste the link into the download box. Tap Download. The video will be processed and ready in a moment.",
   },
   {
-    question: "Do I need to create an account?",
-    answer: "No, you don't need to create an account or sign up. Simply paste the video URL, select your preferred format, and click download. It's that simple!",
+    question: "Can I download videos without a watermark?",
+    answer: "For some platforms (like TikTok), Greyhole downloads the clean version if it's publicly available without the watermark. This depends on how the platform shares the video publicly.",
   },
   {
-    question: "Can I download entire playlists?",
-    answer: "Yes, our downloader supports playlist downloads. You can download up to 100 videos from a single playlist in your chosen format. Just paste the playlist URL instead of an individual video URL.",
+    question: "What formats can I download?",
+    answer: "Greyhole supports multiple formats like MP4 (video) and MP3 (audio only) when available. You can choose what you need before saving.",
   },
   {
-    question: "Why is my download not working?",
-    answer: "If your download isn&apos;t working, please check: 1) The URL is correct and from a supported platform. 2) The video isn&apos;t private or age-restricted. 3) Try refreshing the page and attempting again. If issues persist, the video may have restrictions that prevent downloading.",
+    question: "Where do downloaded videos go?",
+    answer: "Videos are usually saved to your browser or device's default Downloads folder. You can change this location anytime in your browser or phone settings.",
   },
   {
-    question: "Is it legal to download videos?",
-    answer: "Downloading videos for personal use is generally acceptable, but it may violate the terms of service of some platforms. Please respect copyright laws and only download content you have permission to use. Our tool is provided as-is, and users are responsible for how they use downloaded content.",
+    question: "Can I download videos on any device?",
+    answer: "Yes! Greyhole works on Android, iPhone, iPad, Windows, Mac, and other devices via your browser. No special app or extension is needed.",
+  },
+  {
+    question: "Do I need an internet connection to use Greyhole?",
+    answer: "Yes — you need an internet connection to process and download videos. Once downloaded, you can watch them offline anytime.",
+  },
+  {
+    question: "Can I download videos from private accounts?",
+    answer: "No — Greyhole can only download videos that are publicly accessible. Private or restricted content cannot be downloaded.",
+  },
+  {
+    question: "Why won't some videos download?",
+    answer: "Some videos may fail to download if: The link is incorrect or expired. The video is private or restricted. The source platform has changed how downloads work. In such cases, check the link or try another video.",
+  },
+  {
+    question: "Is it safe to use Greyhole?",
+    answer: "Yes, Greyhole is safe to use. It does not collect personal information or store any videos/links — everything is processed temporarily and deleted right after download. However, always copy links only from trusted sources and respect content creators' rights.",
+  },
+  {
+    question: "Can I use downloaded videos for commercial or public sharing?",
+    answer: "You should only use videos you have permission to use or videos that fall under fair use. Downloading for personal offline viewing is typically fine, but redistribution or monetization may violate rights or platform policies. We do not encourage or support any copyright infringement. Always respect copyright and the original creator's rights.",
   },
 ];
 

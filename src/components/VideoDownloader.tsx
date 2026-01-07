@@ -152,7 +152,7 @@ export function VideoDownloader() {
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href="/terms#privacy" className="text-primary hover:underline">
+          <a href="/privacy" className="text-primary hover:underline">
             Privacy Policy
           </a>
         </p>

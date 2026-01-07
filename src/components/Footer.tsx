@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
        
-              <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all">
+              <a href="mailto:superbofficials24@gmail.com" target="_blank" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -56,16 +56,12 @@ const Footer = () => {
                   Terms & Conditions
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/terms#privacy" className="text-muted-foreground hover:text-primary transition-colors">
+              <li>
+                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <Link href="/terms#disclaimer" className="text-muted-foreground hover:text-primary transition-colors">
-                  Disclaimer
-                </Link>
-              </li> */}
+          
             </ul>
           </div>
         </div>
