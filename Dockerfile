@@ -1,5 +1,6 @@
 FROM node:20-alpine AS base
 
+# ------------------ deps ------------------
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
@@ -13,19 +14,27 @@ RUN \
   else echo "Lockfile not found" && exit 1; \
   fi
 
+# ------------------ builder ------------------
 FROM base AS builder
 WORKDIR /app
+
+ENV NEXT_RUNTIME=nodejs
+ENV NEXT_TELEMETRY_DISABLED=1
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
 RUN npm run build
 
+# ------------------ runner ------------------
 FROM base AS runner
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV PORT=3002
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+RUN addgroup -S nodejs -g 1001 \
+ && adduser -S nextjs -u 1001
 
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
@@ -34,4 +43,4 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 EXPOSE 3002
 
-CMD ["sh", "-c", "HOSTNAME=0.0.0.0 node server.js"]
+CMD ["node", "server.js"]
