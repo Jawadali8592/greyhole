@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://web-production-dbc73.up.railway.app";
+const API_BASE_URL = "https://api.greyhole.live";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
