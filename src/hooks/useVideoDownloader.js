@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { videoApi } from "@/lib/api";
+import { videoApi, extractApiError } from "@/lib/api";
 import { useState } from "react";
 
 export function useVideoInfo() {
@@ -25,12 +25,7 @@ export function useVideoDownloader() {
   const streamMutation = useStreamUrl();
 
   const getVideoInfo = async (url) => {
-    try {
-      const result = await videoInfoMutation.mutateAsync(url);
-      return result;
-    } catch (error) {
-      throw error;
-    }
+    return videoInfoMutation.mutateAsync(url);
   };
 
   const startDownload = async ({ url, quality, format }) => {
@@ -46,7 +41,9 @@ export function useVideoDownloader() {
       });
 
       if (result.success) {
-        setDownloadData(result);
+        // Keep the original request: a result that requires muxing has to be
+        // re-resolved by /api/download, which needs the page URL, not the CDN link.
+        setDownloadData({ ...result, request: { url, quality, format } });
         setProgress(100);
         setDownloadStatus({ status: "completed" });
       }
@@ -60,21 +57,27 @@ export function useVideoDownloader() {
   };
 
   const downloadFile = () => {
-    if (downloadData?.download_url && downloadData?.filename) {
-      // Use proxy download to force file download (saves to downloads/gallery)
-      const proxyUrl = videoApi.getProxyDownloadUrl(
-        downloadData.download_url,
-        downloadData.filename
-      );
-      
-      // Create a temporary link and click it to trigger download
-      const link = document.createElement("a");
-      link.href = proxyUrl;
-      link.download = downloadData.filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+    if (!downloadData) return;
+
+    // When video and audio came back as separate streams, the proxy link would
+    // deliver a silent file - only /api/download muxes them with ffmpeg.
+    const href =
+      downloadData.requires_merge && downloadData.request
+        ? videoApi.getDownloadUrl(downloadData.request)
+        : videoApi.getProxyDownloadUrl(downloadData);
+
+    if (!href) return;
+
+    // Create a temporary link and click it to trigger download
+    const link = document.createElement("a");
+    link.href = href;
+    // Advisory only for a cross-origin href; the backend's Content-Disposition
+    // header is what actually names the saved file.
+    if (downloadData.filename) link.download = downloadData.filename;
+    link.rel = "noopener";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const reset = () => {
@@ -105,5 +108,7 @@ export function useVideoDownloader() {
     // Actions
     downloadFile,
     reset,
+    // Flattens the backend's structured 422 detail into a display string.
+    getErrorMessage: extractApiError,
   };
 }

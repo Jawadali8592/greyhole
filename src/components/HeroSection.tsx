@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import {
@@ -20,6 +20,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { useVideoDownloader } from "@/hooks/useVideoDownloader";
+import { extractApiError, type MediaFormat } from "@/lib/api";
 import { toast } from "sonner";
 import { HowToDownloadModal } from "./HowToDownloadModal";
 import Image from "next/image";
@@ -31,6 +32,32 @@ const qualityOptions = [
   { value: "480p", label: "MP4 480p" },
   { value: "audio", label: "MP3 Audio" },
 ];
+
+type QualityOption = { value: string; label: string };
+
+/**
+ * Narrow the selector to the formats the resolver actually found. Backend v4
+ * returns a real per-URL format list, so offering 1080p for a 480p source is
+ * wrong. Non-height entries in the static list ("best", "audio") are kept.
+ */
+function buildQualityOptions(
+  base: QualityOption[],
+  formats?: MediaFormat[]
+): QualityOption[] {
+  const heights = (formats ?? [])
+    .map((f) => f.quality)
+    .filter((q) => /^\d+p$/.test(q));
+  if (!heights.length) return base;
+
+  const unique = Array.from(new Set(heights)).sort(
+    (a, b) => parseInt(b, 10) - parseInt(a, 10)
+  );
+  return [
+    ...base.filter((o) => o.value === "best"),
+    ...unique.map((q) => ({ value: q, label: `MP4 ${q}` })),
+    ...base.filter((o) => o.value === "audio"),
+  ];
+}
 
 const HeroSection = () => {
   const [url, setUrl] = useState("");
@@ -64,7 +91,7 @@ const HeroSection = () => {
         toast.success("Video info loaded successfully");
       }
     } catch (error: any) {
-      toast.error(error.response?.data?.detail || "Failed to fetch video info");
+      toast.error(extractApiError(error, "Failed to fetch video info"));
     }
   };
 
@@ -87,7 +114,7 @@ const HeroSection = () => {
       });
       toast.success("Download started");
     } catch (error: any) {
-      toast.error(error.response?.data?.detail || "Failed to start download");
+      toast.error(extractApiError(error, "Failed to start download"));
     }
   };
 
@@ -97,6 +124,17 @@ const HeroSection = () => {
   };
 
   const displayVideoInfo = videoInfo?.data;
+  const qualityChoices = useMemo(
+    () => buildQualityOptions(qualityOptions, displayVideoInfo?.formats),
+    [displayVideoInfo?.formats]
+  );
+
+  // A new URL can offer a different set of heights; keep the selection valid.
+  useEffect(() => {
+    if (!qualityChoices.some((o) => o.value === selectedQuality)) {
+      setSelectedQuality(qualityChoices[0]?.value ?? "best");
+    }
+  }, [qualityChoices, selectedQuality]);
   const isProcessing = isLoadingInfo || isDownloading;
 
   return (
@@ -194,9 +232,7 @@ const HeroSection = () => {
             <div>
               <h4 className="font-semibold text-red-900 dark:text-red-200">Error</h4>
               <p className="text-sm text-red-700 dark:text-red-300">
-                {(infoError as any)?.response?.data?.detail ||
-                  (downloadError as any)?.response?.data?.detail ||
-                  "An error occurred"}
+                {extractApiError(infoError || downloadError)}
               </p>
             </div>
           </div>
@@ -208,13 +244,15 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Thumbnail */}
               <div className="relative w-full sm:w-48 aspect-video sm:aspect-auto sm:h-32 rounded-lg overflow-hidden bg-muted flex-shrink-0">
-                <Image
-                  src={displayVideoInfo.thumbnail}
-                  alt={displayVideoInfo.title}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+                {displayVideoInfo.thumbnail && (
+                  <Image
+                    src={displayVideoInfo.thumbnail}
+                    alt={displayVideoInfo.title}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                )}
                 <div className="absolute inset-0 flex items-center justify-center bg-foreground/20">
                   <div className="w-12 h-12 rounded-full bg-card/90 flex items-center justify-center">
                     <Play className="h-5 w-5 text-foreground fill-foreground ml-0.5" />
@@ -228,10 +266,14 @@ const HeroSection = () => {
                   <h3 className="font-semibold text-foreground line-clamp-2">
                     {displayVideoInfo.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Duration: {Math.floor(displayVideoInfo.duration / 60)}:
-                    {String(displayVideoInfo.duration % 60).padStart(2, "0")}
-                  </p>
+                  {displayVideoInfo.duration ? (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Duration: {Math.floor(displayVideoInfo.duration / 60)}:
+                      {String(
+                        Math.floor(displayVideoInfo.duration % 60)
+                      ).padStart(2, "0")}
+                    </p>
+                  ) : null}
                   {displayVideoInfo.uploader && (
                     <p className="text-sm text-muted-foreground">
                       By: {displayVideoInfo.uploader}
@@ -251,7 +293,7 @@ const HeroSection = () => {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {qualityOptions.map((option) => (
+                        {qualityChoices.map((option) => (
                           <SelectItem key={option.value} value={option.value}>
                             {option.label}
                           </SelectItem>

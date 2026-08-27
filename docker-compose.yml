@@ -1,6 +1,10 @@
 services:
   greyhole:
-    build: .
+    build:
+      context: .
+      args:
+        # Baked into the client bundle at build time - rebuild to change it.
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-https://api.greyhole.live}
     container_name: greyhole
     restart: unless-stopped
     ports:

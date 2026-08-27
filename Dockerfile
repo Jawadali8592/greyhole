@@ -21,6 +21,12 @@ WORKDIR /app
 ENV NEXT_RUNTIME=nodejs
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# NEXT_PUBLIC_* is inlined into the client bundle at build time, so the API
+# base URL has to be chosen here - it cannot be changed on the running
+# container. Override with: docker build --build-arg NEXT_PUBLIC_API_URL=...
+ARG NEXT_PUBLIC_API_URL=https://api.greyhole.live
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
